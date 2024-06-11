@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation du Groupe</title>
+    <style>
+        body {
+            background-image: url('images/riviere.png');
+            background-size: 200% auto;
+            animation: riverFlow 70s linear infinite;
+            height: 100vh;
+            margin: 0;
+            border: 1px solid transparent;
+            box-sizing: border-box;
+            background-position: 50% 0;
+        }
+
+        .presentation-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff82;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #010b11;
+        }
+
+        p {
+            color: #555;
+        }
+
+        button, .styled-link {
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            text-decoration: none; /* Ajout pour les liens */
+            display: inline-block;
+            text-align: center;
+        }
+
+        button:hover, .styled-link:hover {
+            background-color: #4c4e4f;
+            color: #000000;
+
+        }
+
+        @keyframes riverFlow { /* animation de l'image d'accueil */
+            /*l'image va de haut en bas puis rebondit de bas en haut, en boucle*/
+            0%, 100% {
+                background-position: 50% 0;
+            }
+            50% {
+                background-position: 50% 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="presentation-container">
+        <header>
+            <h1><center>Accueil</center></h1>
+        </header>
+    
+        <div class="presentation-container">
+            <p>
+                Bienvenue sur notre application d'hydrométrie bretonne. Explorez, visualisez les graphiques et découvrez les tendances
+                hydrologiques en Bretagne.
+            </p>
+            <div id="contenu">
+                <span class="texte"><center>Ce Projet Web </center><center>sur l'hydrométrie des rivières bretonnes a été réalisé par :</center></span>
+                <p><center>
+                        <marquee SCROLLDELAY="1" direction="down" loop="0" scrollamount="2">
+                            <FONT COLOR="#555" size="">
+                                <CENTER>- MILED Youssef</a></center>
+                                    <center>- LAURENT Mathis</center>
+                                    <center> - PADOVANI Raphaël </center>
+                                    <center>- MOUSSET Hugo</center>
+                                    <center>- CHERVAL ZUCKER Samuel</center>
+                                    <center>
+                                </CENTER>
+                        </marquee>
+                </center></p>
+    
+                <!-- Bouton pour voir la page principale -->
+                <center><a href="page.html" class="styled-link">Découvrir</a></center>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydrometrie des rivières bretonnes</title>
+    <link rel="stylesheet" type="text/css" href="leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body onload="load_data()">
+    <style>
+    body{
+        background-image: 
+                        url('images/hermine.jpg');
+        background-size: 20%;
+        background-repeat: repeat;
+        margin: 20;   
+        box-sizing: border-box;
+
+    }
+    </style>
+    <header>
+        <a href="index.html" class="styled-link">Accueil</a>
+        <a href="aide.html" class="styled-link">Aide</a>
+
+        <h1>Hydrométrie des rivières bretonnes</h1>
+    </header>
+
+    <div class="container">
+        <div id="map" class="map"></div>
+
+        <div class="settings">
+
+        <div id="form-container"> <!-- Nouvelle balise div pour le formulaire -->
+                <!-- Le formulaire sera ajouté ici dynamiquement -->
+        </div>
+
+        <div id="form-indicateur">
+            <form id="indicateurForm" onchange="SelectOption(event)">
+                <label for="optionsSelect">Indicateur: </label>
+                <select id="optionsSelect" name="optionsSelect">
+                    <option value="Moyenne interannuelle (m3/s)">Moyenne interannuelle</option>
+                    <option value="Valeur forte (m3/s)">Valeur forte</option>
+                    <option value="Valeur faible (m3/s)">Valeur faible</option>
+                </select>
+            </form>
+            
+        </div>
+        <label class="ajout-check-box">
+            <input type="checkbox" id="addCompButton" onclick="SetComp()" disabled/>
+            <span class="checkbox-icon"></span> Comparer avec une station
+        </label>
+        <div class="ajout-check-box-container">
+            <label class="ajout-check-box">
+                <input type="checkbox" id="agreg-stations" onclick="agregStations()">
+                <span class="checkbox-icon"></span> Moyenne de plusieurs stations
+            </label>
+            <button id="submit-agreg" class="styled-button" onclick="submitAgreg()">Valider</button>
+        </div>
+        <button id="resetButton" class="styled-button" onclick="resetImage()">Réinitialiser</button>
+
+        </div>
+        
+
+        
+    </div>
+    <div id="reponse">
+        <div class="result-container">
+            <img width="70%" align="center" src="" />
+            <div class="stats">
+                <p id="max_val" class="maxi"></p>
+                <p id="min_val"></p>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="leaflet.js"></script>
+    <script src="page.js"></script>
+</body>
+
+</html>
